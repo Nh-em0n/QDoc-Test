@@ -1,5 +1,5 @@
 
-  <sn><md>## Proxying Property Lookup
+  <sn><md>### Proxying Property Lookup
 
 To influence property lookup, the get handler must be used.
 In this example, we modify property lookup so that not only the value, but also the type of that value is returned.
@@ -29,7 +29,7 @@ console.log(proxied.foo); // logs `Object {value: "bar", type: "string"}`
     <tags>#01.proxying property lookup</tags>
     <thumbnail></thumbnail>
     <heading></heading>
-    <udate>Fri Oct 24 2025 08:46:05 GMT+0600 (Bangladesh Standard Time)</udate>
+    <udate>Sun Nov 08 2026 00:01:30 GMT+0600 (Bangladesh Standard Time)</udate>
     <id>article-nnhlYn2U9I</id>
     <duration></duration>
   </config>
