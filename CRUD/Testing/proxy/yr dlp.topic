@@ -1,0 +1,543 @@
+
+  <sn><md># Complete Guide to Using yt-dlp in Linux {.text-center}
+</md></sn>
+  <config>
+    <tags>#yr dlp</tags>
+    <thumbnail></thumbnail>
+    <heading></heading>
+    <udate>Thu Jun 18 2026 22:30:44 GMT+0600 (Bangladesh Standard Time)</udate>
+    <id>article-CgFolVJS5I</id>
+    <duration></duration>
+  </config>
+<sn><md>### Introduction
+
+**yt-dlp** is a powerful command-line program used to download videos, audio, subtitles, playlists, and other media from YouTube and thousands of supported websites. It is a community-maintained fork of youtube-dl and offers better performance, more features, and frequent updates.
+
+Whether you want to download a single video, an entire playlist, extract audio, or automate downloads, yt-dlp provides extensive options for Linux users.
+</md></sn><sn><md>### Installing yt-dlp
+
+**Ubuntu / Debian**
+
+```bash
+sudo apt update
+sudo apt install yt-dlp
+```
+
+**Install Latest Version**
+
+```bash
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp \
+-o /usr/local/bin/yt-dlp
+
+sudo chmod a+rx /usr/local/bin/yt-dlp
+```
+
+**Verify installation:**
+
+```bash
+yt-dlp --version
+```
+
+</md></sn><sn><md>### Updating yt-dlp
+
+```bash
+yt-dlp -U
+```
+
+If installed through a package manager:
+
+```bash
+sudo apt update
+sudo apt upgrade yt-dlp
+```
+</md></sn><sn><md>Basic Usage
+
+**Download a Video**
+
+```bash
+yt-dlp "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+Example:
+
+```bash
+yt-dlp "https://youtu.be/dQw4w9WgXcQ"
+```
+</md></sn><sn><md>**Viewing Available Formats**
+
+Before downloading, you can inspect available formats:
+
+```bash
+yt-dlp -F URL
+```
+
+Example:
+
+```bash
+yt-dlp -F https://youtu.be/dQw4w9WgXcQ
+```
+
+Output includes:
+
+* Format ID
+* Resolution
+* Codec
+* File size
+</md></sn><sn><md>### Downloading Specific Video Quality
+
+**Download 1080p**
+
+```bash
+yt-dlp -f 137+140 URL
+```
+
+Where:
+
+* 137 = 1080p video
+* 140 = Audio
+
++++ check
+
+```bash
+emon@em09:~$ yt-dlp -F https://youtu.be/INKaTuAlWKs?si=v3Df8b6Nain-WMa3
+WARNING: Your yt-dlp version (2026.03.17) is older than 90 days!
+         It is strongly recommended to always use the latest version.
+         As yt-dlp has been installed via apt, you should use that to update.  If you're on a stable release, also check backports..
+         To suppress this warning, add --no-update to your command/config.
+[youtube] Extracting URL: https://youtu.be/INKaTuAlWKs?si=v3Df8b6Nain-WMa3
+[youtube] INKaTuAlWKs: Downloading webpage
+WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+[youtube] INKaTuAlWKs: Downloading android vr player API JSON
+[info] Available formats for INKaTuAlWKs:
+ID  EXT   RESOLUTION FPS CH │   FILESIZE  TBR PROTO │ VCODEC         VBR ACODEC      ABR ASR MORE INFO
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+sb3 mhtml 48x27        0    │                 mhtml │ images                                 storyboard
+sb2 mhtml 80x45        1    │                 mhtml │ images                                 storyboard
+sb1 mhtml 160x90       1    │                 mhtml │ images                                 storyboard
+sb0 mhtml 320x180      1    │                 mhtml │ images                                 storyboard
+139 m4a   audio only      2 │    1.61MiB  49k https │ audio only         mp4a.40.5   49k 22k [en-US] English (US) original (default), low, m4a_dash
+249 webm  audio only      2 │    1.64MiB  50k https │ audio only         opus        50k 48k [en-US] English (US) original (default), low, webm_dash
+140 m4a   audio only      2 │    4.27MiB 129k https │ audio only         mp4a.40.2  129k 44k [en-US] English (US) original (default), medium, m4a_dash
+251 webm  audio only      2 │    3.76MiB 114k https │ audio only         opus       114k 48k [en-US] English (US) original (default), medium, webm_dash
+160 mp4   256x144     30    │  768.74KiB  23k https │ avc1.4d400c    23k video only          144p, mp4_dash
+278 webm  256x144     30    │    1.01MiB  30k https │ vp9            30k video only          144p, webm_dash
+394 mp4   256x144     30    │  651.40KiB  19k https │ av01.0.00M.08  19k video only          144p, mp4_dash
+133 mp4   426x240     30    │    1.20MiB  36k https │ avc1.4d4015    36k video only          240p, mp4_dash
+242 webm  426x240     30    │    1.00MiB  30k https │ vp9            30k video only          240p, webm_dash
+395 mp4   426x240     30    │  967.00KiB  29k https │ av01.0.00M.08  29k video only          240p, mp4_dash
+134 mp4   640x360     30    │    1.87MiB  57k https │ avc1.4d401e    57k video only          360p, mp4_dash
+18  mp4   640x360     30  2 │    5.20MiB 158k https │ avc1.42001E        mp4a.40.2       44k [en] 360p
+243 webm  640x360     30    │    1.61MiB  49k https │ vp9            49k video only          360p, webm_dash
+396 mp4   640x360     30    │    1.49MiB  45k https │ av01.0.01M.08  45k video only          360p, mp4_dash
+135 mp4   854x480     30    │    2.62MiB  80k https │ avc1.4d401f    80k video only          480p, mp4_dash
+244 webm  854x480     30    │    2.23MiB  68k https │ vp9            68k video only          480p, webm_dash
+397 mp4   854x480     30    │    2.21MiB  67k https │ av01.0.04M.08  67k video only          480p, mp4_dash
+136 mp4   1280x720    30    │    4.11MiB 125k https │ avc1.64001f   125k video only          720p, mp4_dash
+247 webm  1280x720    30    │    3.94MiB 119k https │ vp9           119k video only          720p, webm_dash
+398 mp4   1280x720    30    │    3.61MiB 110k https │ av01.0.05M.08 110k video only          720p, mp4_dash
+137 mp4   1920x1080   30    │    7.01MiB 213k https │ avc1.640028   213k video only          1080p, mp4_dash
+248 webm  1920x1080   30    │    5.14MiB 156k https │ vp9           156k video only          1080p, webm_dash
+399 mp4   1920x1080   30    │    5.69MiB 173k https │ av01.0.08M.08 173k video only          1080p, mp4_dash
+emon@em09:~$ 
+
+```
+
++++
+
+
+---
+
+**Download Best Quality**
+
+```bash
+yt-dlp -f bestvideo+bestaudio URL
+```
+
+or
+
+```bash
+yt-dlp -f bv+ba URL
+```
+</md></sn><sn><md>**Download Best Combined Format**
+
+```bash
+yt-dlp -f best URL
+```
+</md></sn><sn><md>#### Downloading Audio Only
+
+**Best Audio**
+
+```bash
+yt-dlp -f ba URL
+```
+
+**Convert to MP3**
+
+Requires FFmpeg.
+
+```bash
+yt-dlp -x --audio-format mp3 URL
+```
+
+---
+
+**Convert to AAC**
+
+```bash
+yt-dlp -x --audio-format aac URL
+```
+
+---
+
+**Convert to FLAC**
+
+```bash
+yt-dlp -x --audio-format flac URL
+```
+
+</md></sn><sn><md>#### Installing FFmpeg
+
+Ubuntu:
+
+```bash
+sudo apt install ffmpeg
+```
+
+Verify:
+
+```bash
+ffmpeg -version
+```
+</md></sn><sn><md>#### Downloading Playlists
+
+**Entire Playlist**
+
+```bash
+yt-dlp PLAYLIST_URL
+```
+
+---
+
+**First 10 Videos**
+
+```bash
+yt-dlp --playlist-items 1-10 PLAYLIST_URL
+```
+
+---
+
+**Specific Videos**
+
+```bash
+yt-dlp --playlist-items 5,7,10 PLAYLIST_URL
+```
+</md></sn><sn><md>#### Downloading YouTube Shorts
+
+Single short:
+
+```bash
+yt-dlp SHORT_URL
+```
+
+Channel Shorts Tab:
+
+```bash
+yt-dlp https://www.youtube.com/@CHANNEL/shorts
+```
+</md></sn><sn><md>#### Downloading an Entire Channel
+
+```bash
+yt-dlp https://www.youtube.com/@CHANNEL/videos
+```
+
+</md></sn><sn><md>#### Download Only New Videos
+
+```bash
+yt-dlp --download-archive archive.txt CHANNEL_URL
+```
+
+This keeps track of downloaded videos.
+</md></sn><sn><md>#### Downloading Subtitles
+
+**All Available Subtitles**
+
+```bash
+yt-dlp --list-subs URL
+```
+
+---
+
+**English Subtitles**
+
+```bash
+yt-dlp --write-subs --sub-lang en URL
+```
+
+---
+
+**Automatic Subtitles**
+
+```bash
+yt-dlp --write-auto-subs URL
+```
+
+---
+
+**Downloading Metadata**
+
+```bash
+yt-dlp --write-info-json URL
+```
+
+Creates:
+
+```text
+video.info.json
+```
+
+containing video metadata.
+</md></sn><sn><md>### Custom Output Names
+
+**Default**
+
+```bash
+yt-dlp -o "%(title)s.%(ext)s" URL
+```
+
+---
+
+**Organize by Channel**
+
+```bash
+yt-dlp -o "%(uploader)s/%(title)s.%(ext)s" URL
+```
+
+---
+
+**Include Upload Date**
+
+```bash
+yt-dlp -o "%(upload_date)s-%(title)s.%(ext)s" URL
+```
+
+---
+
+**Downloading to a Specific Directory**
+
+```bash
+yt-dlp -P ~/Downloads/Videos URL
+```
+
+
+
+</md></sn><sn><md>#### Downloading Multiple Videos
+
+Create:
+
+```text
+urls.txt
+```
+
+```text
+https://youtu.be/video1
+https://youtu.be/video2
+https://youtu.be/video3
+```
+
+Download:
+
+```bash
+yt-dlp -a urls.txt
+```
+</md></sn><sn><md>#### Limiting Download Speed
+
+```bash
+yt-dlp -r 1M URL
+```
+
+1 MB/s maximum speed.
+
+---
+
+**Resume Interrupted Downloads**
+
+```bash
+yt-dlp -c URL
+```
+
+</md></sn><sn><md>#### Downloading Thumbnails
+
+```bash
+yt-dlp --write-thumbnail URL
+```
+
+
+**Embed Thumbnail into MP3**
+
+```bash
+yt-dlp -x --audio-format mp3 \
+--embed-thumbnail URL
+```
+
+**Embedding Metadata**
+
+```bash
+yt-dlp --embed-metadata URL
+```
+</md></sn><sn><md>**Downloading Live Streams**
+
+```bash
+yt-dlp URL
+```
+
+For active streams:
+
+```bash
+yt-dlp --live-from-start URL
+```
+</md></sn><sn><md>#### Downloading Age-Restricted Videos
+
+Use browser cookies:
+
+```bash
+yt-dlp --cookies-from-browser firefox URL
+```
+
+or
+
+```bash
+yt-dlp --cookies-from-browser chrome URL
+```
+
+</md></sn><sn><md>### Search Without Opening YouTube
+
+Search and download:
+
+```bash
+yt-dlp "ytsearch:linux tutorial"
+```
+
+First five results:
+
+```bash
+yt-dlp "ytsearch5:linux tutorial"
+```
+</md></sn><sn><md>#### Extracting Video Information
+
+```bash
+yt-dlp --print title URL
+```
+
+Uploader:
+
+```bash
+yt-dlp --print uploader URL
+```
+
+Duration:
+
+```bash
+yt-dlp --print duration URL
+```
+</md></sn><sn><md>#### Useful Format Selectors
+
+| Selector | Meaning                 |
+| -------- | ----------------------- |
+| best     | Best combined format    |
+| worst    | Lowest quality          |
+| bv       | Best video              |
+| ba       | Best audio              |
+| bv+ba    | Best video + best audio |
+| 137+140  | 1080p video + audio     |
+| 22       | Specific format ID      |
+
+</md></sn><sn><md>#### Useful Examples
+
+**Best Quality Video**
+
+```bash
+yt-dlp -f bv+ba URL
+```
+
+**MP3 Download**
+
+```bash
+yt-dlp -x --audio-format mp3 URL
+```
+
+**Entire Playlist**
+
+```bash
+yt-dlp PLAYLIST_URL
+```
+
+**Download New Videos Only**
+
+```bash
+yt-dlp --download-archive archive.txt CHANNEL_URL
+```
+
+**Download Shorts**
+
+```bash
+yt-dlp https://www.youtube.com/@CHANNEL/shorts
+```
+
+**Save into Organized Folders**
+
+```bash
+yt-dlp -o "%(uploader)s/%(title)s.%(ext)s" URL
+```
+
+---
+
+**Configuration File**
+
+Create:
+
+```bash
+mkdir -p ~/.config/yt-dlp
+nano ~/.config/yt-dlp/config
+```
+
+Example:
+
+```text
+-f bv+ba
+-o %(uploader)s/%(title)s.%(ext)s
+--embed-metadata
+--embed-thumbnail
+```
+
+These options will automatically apply to every yt-dlp command.
+</md></sn><sn><md>### Troubleshooting
+
+**Update yt-dlp**
+
+```bash
+yt-dlp -U
+```
+
+**Update FFmpeg**
+
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+**Check Available Formats**
+
+```bash
+yt-dlp -F URL
+```
+
+**Use Browser Cookies**
+
+```bash
+yt-dlp --cookies-from-browser firefox URL
+```
+
+</md></sn><sn><md>#### Conclusion
+
+yt-dlp is one of the most versatile media downloading tools available on Linux. With support for thousands of websites, playlists, channels, subtitles, metadata extraction, and format customization, it can handle nearly any downloading task. Combining yt-dlp with FFmpeg unlocks advanced capabilities such as audio conversion, metadata embedding, thumbnail integration, and automated media management.
+</md></sn>
