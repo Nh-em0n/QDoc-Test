@@ -1,10 +1,65 @@
 
-  <sn></sn>
+  <sn><md>The quickest way is with `apt`, using OpenJDK.
+
+**1. Update the package index**
+```bash
+sudo apt update
+```
+
+**2. Install a JDK**
+
+The default version for your Ubuntu release:
+```bash
+sudo apt install default-jdk
+```
+
+Or a specific version (17 and 21 are the common LTS choices):
+```bash
+sudo apt install openjdk-17-jdk
+# or
+sudo apt install openjdk-21-jdk
+```
+
+If you only need to run Java programs and not compile them, install the JRE instead, e.g. `openjdk-17-jre`.
+
+**3. Verify the installation**
+```bash
+java -version
+javac -version
+```
+
+**Switching between multiple versions**
+
+If you install more than one version, choose the active one with:
+```bash
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+```
+
+**Setting JAVA_HOME (optional, needed by some tools like Maven or Gradle)**
+
+Find the install path:
+```bash
+dirname $(dirname $(readlink -f $(which java)))
+```
+
+Then add it to `~/.bashrc` (adjust the path to match your version):
+```bash
+echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+```
+
+**Uninstalling**
+```bash
+sudo apt remove openjdk-17-jdk
+```
+
+If you need Oracle JDK instead of OpenJDK, you have to download the `.deb` package from Oracle's website and install it with `sudo apt install ./jdk-xx_linux-x64_bin.deb`. For most uses, OpenJDK is fully sufficient.</md></sn>
   <config>
     <tags>#installation</tags>
     <thumbnail></thumbnail>
     <heading></heading>
-    <udate>Sun Nov 08 2026 02:33:02 GMT+0600 (Bangladesh Standard Time)</udate>
+    <udate>Sun Nov 08 2026 02:33:44 GMT+0600 (Bangladesh Standard Time)</udate>
     <id>article-Ch73SK2R2S</id>
     <duration></duration>
   </config>
