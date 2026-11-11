@@ -1,7 +1,7 @@
 
   <sn><md>:::.row
 :::.col-12 .col-lg-10
-### Rclone
+### Rclone{.text-center}
 
 **Rclone** is an open source, multi threaded, `command line computer program` to manage or migrate content on cloud and other high latency storage. Its capabilities include sync, transfer, crypt, cache, union, compress and mount. The rclone website lists supported backends including S3 and Google Drive.
 :::
@@ -21,7 +21,7 @@ Official Ubuntu, Debian, Fedora, Gentoo, Arch, Brew, Chocolatey, and other *pack
     <tags>#01.what is rclone</tags>
     <thumbnail></thumbnail>
     <heading></heading>
-    <udate>Mon Aug 31 2026 17:01:01 GMT+0600 (Bangladesh Standard Time)</udate>
+    <udate>Wed Nov 11 2026 11:19:43 GMT+0600 (Bangladesh Standard Time)</udate>
     <id>article-nfbGUnmscA</id>
     <duration></duration>
   </config>
