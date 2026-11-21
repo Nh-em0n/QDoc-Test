@@ -1,3 +1,6 @@
+### File Updates
+
+
 ftp://if0_38268624@ftpupload.net
 Zjy63yEvODsfxX
 
@@ -104,7 +107,7 @@ Branches of QDoc
 - change default theme based on time
 - inspiration 
 - https://cursor.com/docs
-- https://7inif7p6jcz2y.kimi.page/?id=2079217808532901888&share_id=19f7fd7e-2022-8739-8000-000014716a87
+- https://7inif7p6jcz2y.kimi.page/?id=2079217808532901888&amp;share_id=19f7fd7e-2022-8739-8000-000014716a87
 - https://www.kimi.com/code?from=kimi_homepage_sidebar
 
 - follow kimi.com webpage layout
@@ -172,7 +175,7 @@ Branches of QDoc
 - notes saving
 - 
 - test outfit as header font
-- https://dm.terabox.com/pfile/docview?path=%2FTeraBoxQuickStartGuide.pdf&client=web&scene=main set this website bg and section
+- https://dm.terabox.com/pfile/docview?path=%2FTeraBoxQuickStartGuide.pdf&amp;client=web&amp;scene=main set this website bg and section
 - prefer header font 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', serif;
 - Github like toc
 - improve screenshot functionality of certain component like gofullpage chrome extension
