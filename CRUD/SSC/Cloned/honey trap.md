@@ -1,3 +1,9 @@
+**SANTA CLARA** — The scandal engulfing Nvidia CEO Jensen Huang is not merely a story of infidelity at the top of the world's most valuable company. It is a case study in how an intelligence tactic older than the Bible—the honey trap—has found its perfect modern target: a man who controls the hardware underpinning the global AI race and who reportedly has a direct line to the President of the United States.
+
+Huang admitted to an extramarital affair with a woman identified by U.S. officials as Alice Huang (no relation), a former executive at Singapore-based Megaspeed, a company under investigation for allegedly diverting restricted Nvidia chips to China . U.S. intelligence has reportedly concluded that Alice Huang was recruited by China's Ministry of State Security to gather information on Huang and American AI chip technology . Beijing has denied the allegations, calling them "pure fabrication" and a "smear against China" .
+
+
+
 # The Honey Trap Hitting the AI Chip War: Jensen Huang, Nvidia, and the Ancient Art of Weakening Powerful Men
 
 **SANTA CLARA** — The scandal engulfing Nvidia CEO Jensen Huang is not merely a story of infidelity at the top of the world's most valuable company. It is a case study in how an intelligence tactic older than the Bible—the honey trap—has found its perfect modern target: a man who controls the hardware underpinning the global AI race and who reportedly has a direct line to the President of the United States.
