@@ -27,7 +27,7 @@ Here is the updated table with the 5th column showing **valency** instead of ion
 | Potassium | K | 19 | 2, 8, 8, 1 | 1 |
 | Calcium | Ca | 20 | 2, 8, 8, 2 | 2 |
 
-### 📝 Notes on Valency
+### Notes on Valency
 
 - **Valency** is the combining capacity of an element — the number of electrons an atom can gain, lose, or share to complete its outermost shell.
 - For **metals** (Li, Be, Na, Mg, Al, K, Ca), valency = number of electrons in the outermost shell (they lose them).
